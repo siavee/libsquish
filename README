@@ -1,3 +1,11 @@
+libsquish is a fork / export product of https://code.google.com/p/libsquish/
+with additional python bindings from https://github.com/tito/libsquish and
+some fixes to make python bindings work.
+
+===============
+ORIGINAL README
+===============
+
 LICENSE
 -------
 
