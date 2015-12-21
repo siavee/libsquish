@@ -76,6 +76,13 @@ SET_TARGET_PROPERTIES(
     XCODE_ATTRIBUTE_SQUISH_CFLAGS_ppc "-maltivec"
     )
 
+# ----------------------------------------------------------------
+# fixes python binding compilation problem relocation XXXXXX against `a local symbol' can not be
+# used when making a shared object; recompile with -fPIC
+IF( CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64" )
+  SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-fPIC")
+ENDIF( CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64" )
+
 IF (BUILD_SQUISH_EXTRA)
     SET(SQUISHTEST_SRCS extra/squishtest.cpp)
 
